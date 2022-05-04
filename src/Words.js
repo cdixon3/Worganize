@@ -9,6 +9,14 @@ export const boardDefault = [
   ["", "", "", "", ""],
 ];
 
+export const colorDefault = [
+  [0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0],
+];
+
 export const generateWordSet = async () => {
   let wordSet;
   let todaysWord;

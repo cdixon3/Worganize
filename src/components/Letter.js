@@ -1,27 +1,15 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import { AppContext } from "../App";
 
 function Letter({ letterPos, attemptVal }) {
-  const { board, setDisabledLetters, currAttempt, correctWord } =
+  const { colorBoard, onClickSquare } =
     useContext(AppContext);
-  const letter = board[attemptVal][letterPos];
-  const correct = correctWord.toUpperCase()[letterPos] === letter;
-  const almost =
-    !correct && letter !== "" && correctWord.toUpperCase().includes(letter);
-  const letterState =
-    currAttempt.attempt > attemptVal &&
-    (correct ? "correct" : almost ? "almost" : "error");
 
-  useEffect(() => {
-    if (letter !== "" && !correct && !almost) {
-      console.log(letter);
-      setDisabledLetters((prev) => [...prev, letter]);
-    }
-  }, [currAttempt.attempt]);
+  const color = colorBoard[attemptVal][letterPos];
+  const letterState = color === 0 ? "error" : color === 1 ? "almost" : "correct";
+
   return (
-    <div className="letter" id={letterState}>
-      {letter}
-    </div>
+    <div className="letter" id={letterState} onClick={() => onClickSquare(letterPos, attemptVal)}/>
   );
 }
 
