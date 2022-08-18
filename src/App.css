@@ -2,7 +2,7 @@
   text-align: center;
   background-color: #121212;
   width: 100vw;
-  height: 100vh;
+  /* height: 100vh; */
   /* display: flex; */
   color: white;
 }
@@ -28,40 +28,106 @@ nav h1 {
   font-size: 45px;
 }
 .game {
-  width: 100vw;
-  height: calc(100vh - 170px);
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  height: calc(70% - 60px);
   display: flex;
-  align-items: center;
-  padding-top: 50px;
   flex-direction: column;
+}
+
+.board-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  overflow: hidden;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  overflow: hidden;
+}
+
+.options-container {
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
+  overflow: auto;
+}
+
+.columns {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
+}
+
+.options {
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  grid-gap: 5px;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.option {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 5px;
+}
+
+.submit {
+  height: 30px;
+  width: 100px;
+  background-color: #121212;
+  border: 2px solid #3a3a3c;
+  color: white;
 }
 
 .board {
-  width: 450px;
-  height: 550px;
-  border: 1px solid black;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-rows: repeat(5, 1fr);
+  grid-gap: 5px;
+  padding: 10px;
+  box-sizing: border-box;
 }
 
 .row {
-  flex: 33%;
-  display: flex;
-  flex-direction: row;
-  margin: 5px;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-gap: 5px;
 }
 
 .letter {
-  flex: 33%;
-  height: 100%;
-  border: 1px solid grey;
-  margin: 5px;
-  display: grid;
-  place-items: center;
-  font-size: 30px;
-  font-weight: bolder;
+  width: 100%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  line-height: 2rem;
+  font-weight: bold;
+  vertical-align: middle;
+  box-sizing: border-box;
+  border: 2px solid #3a3a3c;
+}
+
+
+.dropdown {
+  width: 100%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  line-height: 2rem;
+  font-weight: bold;
+  vertical-align: middle;
+  box-sizing: border-box;
+  border: 2px solid #3a3a3c;
+  background-color: #121212;
   color: white;
-  font-family: Arial, Helvetica, sans-serif;
 }
 
 #correct {
@@ -73,7 +139,7 @@ nav h1 {
 }
 
 #error {
-  background-color: #3a393c;
+  background-color: #121212;
 }
 
 .keyboard {
