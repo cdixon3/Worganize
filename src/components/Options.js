@@ -2,23 +2,11 @@ import React, { useContext } from "react";
 import { AppContext } from "../App";
 
 function Options() {
-    const { words, numFirstColumn, numSecondColumn } = useContext(AppContext);
-
-//   const letter = words[attemptVal][letterPos] !== "_" ? words[attemptVal][letterPos] : "";
-
-//   return (
-//     <div className="letter">
-//       {letter}
-//     </div>
-//   );
+    const { words, numFirstColumn } = useContext(AppContext);
 
     const gridTemplateRows = '1fr '.repeat(numFirstColumn);
     const firstColumnRows = []
     const secondColumnRows = []
-
-    console.log(words)
-    console.log(numFirstColumn)
-    console.log(numSecondColumn)
     
     for (let i = 0; i < words.length; i++) {
         if (i % 2 === 0) {
@@ -57,9 +45,6 @@ function Options() {
             )
         }
     }
-
-    console.log(firstColumnRows)
-    console.log(secondColumnRows)
 
     return (
         <div className="options-container">

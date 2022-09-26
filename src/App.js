@@ -11,7 +11,6 @@ function App() {
   const [letters, setLetters] = useState(letterDefault);
   const [words, setWords] = useState(wordsDefault);
   const [numFirstColumn, setNumFirstColumn] = useState(0);
-  const [numSecondColumn, setNumSecondColumn] = useState(0);
 
   const onClickSquare = (letterPos, attemptVal) => {
     const newColorBoard = [...colorBoard];
@@ -158,7 +157,6 @@ function App() {
     const numFirstColumn = numSecondColumn + (words.length % 2);
 
     setNumFirstColumn(numFirstColumn);
-    setNumSecondColumn(numSecondColumn);
     setWords(words);
   }
 
@@ -174,7 +172,6 @@ function App() {
           onClickSquare,
           onSelectLetter, 
           numFirstColumn,
-          numSecondColumn,
           words
         }}
       >
@@ -185,21 +182,6 @@ function App() {
           </div>
         </div>
         <Options />
-        {/* <div className="options-container">
-          <div className="columns" style={{width: 1000, height: 350}}>
-            <div className="options" style={{width: 350, height: 140}}>
-              <div className="option">
-                <OptionLetter letterPos={0} attemptVal={0} />
-                <OptionLetter letterPos={1} attemptVal={0} />
-                <OptionLetter letterPos={2} attemptVal={0} />
-                <OptionLetter letterPos={3} attemptVal={0} />
-                <OptionLetter letterPos={4} attemptVal={0} />
-              </div>
-            </div>
-            <div className="options" style={{width: 350, height: 140}}>
-            </div>
-          </div>
-        </div> */}
       </AppContext.Provider>
     </div>
   );
