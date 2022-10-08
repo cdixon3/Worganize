@@ -1,3 +1,33 @@
+# What is Worganize?
+
+Worganize is an app that will help organize green and yellow letters from Wordle so that one can make more intelligent guesses.
+
+## Example
+
+Let's say that these are your first two guesses in Wordle:
+
+![Wordle Two](screenshots/wordle_two.png)
+
+The letter color(s) and position(s) can be added to Worganize like this:
+
+![Worganize Two](screenshots/worganize_two.png)
+
+Which will produce all possible orderings of the different letters:
+
+![Orderings](screenshots/orderings.png)
+
+Based on this output, your next guess might be BLURS (since `_ _ _ R S` is a possible ordering).
+
+![Wordle Three](screenshots/wordle_three.png)
+
+Now that we have more information, the inputs to Worganize will change:
+
+![Worganize Three](screenshots/worganize_three.png)
+
+Knowing that the letter ordering must be `_ S U R _` you might (correctly) guess `U S U R P`:
+
+![Wordle Solution](screenshots/wordle_solution.png)    
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
